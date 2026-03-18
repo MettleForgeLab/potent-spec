@@ -1,5 +1,4 @@
-`
-\# potent-spec
+# potent-spec
 
 
 
@@ -11,11 +10,11 @@ A Potent is a boundary that holds form without ever becoming what it contains. T
 
 
 
-\---
+---
 
 
 
-\## Canonical Surface
+## Canonical Surface
 
 
 
@@ -23,7 +22,7 @@ The authoritative definition is:
 
 
 
-\- SPECIFICATION.md
+- SPECIFICATION.md
 
 
 
@@ -31,63 +30,63 @@ This file contains the complete and final structure of the system. It should be 
 
 
 
-\---
+---
 
 
 
-\## Repository Contents
+## Repository Contents
 
 
 
-\- SPECIFICATION.md — canonical system definition
+- SPECIFICATION.md — canonical system definition
 
-\- docs/workshop/ — formation path that produced the specification
+- docs/workshop/ — formation path that produced the specification
 
-\- docs/reference/ — source-adjacent materials used during development
+- docs/reference/ — source-adjacent materials used during development
 
-\- docs/placement/ — repository posture and usage boundaries
-
-
-
-\---
+- docs/placement/ — repository posture and usage boundaries
 
 
 
-\## What Belongs Here
+---
 
 
 
-\- The Potent system definition
-
-\- Supporting materials that preserve how the system was formed
-
-\- Reference materials that informed the specification
+## What Belongs Here
 
 
 
-\---
+- The Potent system definition
+
+- Supporting materials that preserve how the system was formed
+
+- Reference materials that informed the specification
 
 
 
-\## What Does Not Belong Here
+---
 
 
 
-\- Application implementations
-
-\- Runtime code
-
-\- Interpretations, extensions, or redesigns of the system
-
-\- Derived frameworks or tooling
+## What Does Not Belong Here
 
 
 
-\---
+- Application implementations
+
+- Runtime code
+
+- Interpretations, extensions, or redesigns of the system
+
+- Derived frameworks or tooling
 
 
 
-\## Usage
+---
+
+
+
+## Usage
 
 
 
@@ -99,12 +98,12 @@ It is intended to be:
 
 
 
-\- read
+- read
 
-\- referenced
+- referenced
 
-\- implemented elsewhere without modification to the core definition
-`
+- implemented elsewhere without modification to the core definition
+
 
 
 
