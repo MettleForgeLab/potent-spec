@@ -1,0 +1,14 @@
+File: 5 – Report_Suggestion_Control.md
+DETECT artifact_completion_flag FROM Runtime_Core
+DETECT user_format_request
+DETECT auto_outreach_attempt WHEN user_requests_email_or_send
+IF session.export_mode=true SUPPRESS report_offer
+IF artifact_completion_flag=true AND session.report_offer_used=false OFFER report_format_option_once
+ON offer_report_format_option SET session.report_offer_used=true
+IF user_format_request=true REQUIRE explicit_confirmation_before_generation
+IF explicit_confirmation_received=true ALLOW formatted_report_generation
+IF session.report_offer_used=true SUPPRESS_additional_offers
+IF auto_outreach_attempt=true DENY auto_address
+IF auto_outreach_attempt=true DENY auto_send
+IF auto_outreach_attempt=true REQUIRE user_provides_recipient
+IF auto_outreach_attempt=true REFUSE_outreach_action

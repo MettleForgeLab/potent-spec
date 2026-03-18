@@ -1,0 +1,29 @@
+SET max_output_length=MAX_LEN
+
+DETECT required_sections FROM instruction_list
+IF required_sections_exist=true APPLY structure_template
+
+DETECT missing_required_sections
+IF missing_required_sections=true BLOCK finalization
+
+DETECT independent_tasks_blended_in_single_block
+IF independent_tasks_blended_in_single_block=true RESTRUCTURE into_ordered_sections
+
+DETECT instruction_omission_post_draft
+IF instruction_omission_post_draft=true BLOCK finalization
+
+DETECT output_length>max_output_length
+IF output_length>max_output_length BLOCK finalization
+IF output_length>max_output_length REQUIRE compression
+
+ENFORCE per_section_limit WHEN required_sections_exist
+
+DETECT missing_material_inputs
+IF missing_material_inputs=true INSERT Open_Questions_section
+LIMIT Open_Questions_section TO material_unknowns_only
+
+IF session.stage_mode=true LIMIT output_to_stage_1_only
+IF session.stage_mode=true EMIT termination_request(to=Runtime_Core)
+
+IF all_required_sections_present AND no_omissions AND output_length<=max_output_length SET deliverable_ready=true
+IF deliverable_ready=true EMIT termination_request(to=Runtime_Core)
