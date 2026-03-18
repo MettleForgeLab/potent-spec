@@ -1,3 +1,4 @@
+`
 \# potent-spec
 
 
@@ -103,6 +104,7 @@ It is intended to be:
 \- referenced
 
 \- implemented elsewhere without modification to the core definition
+`
 
 
 
